@@ -5,7 +5,8 @@ export default function Todo() {
     const [todo, setTodo] = useState([]);
 
     const addText = () => {
-        let array = todo;
+        let array1 = todo; // this declaration refers  the memory
+        let array = [...todo]; // this declares the actual values
         array.push(value);
         setValue("");
         setTodo(array);
@@ -13,7 +14,7 @@ export default function Todo() {
     } 
 
     const deleteLast = ()=> {
-        let array = todo;
+        let array = [...todo];
         array.pop();
         setTodo(array);
         console.log(array);
