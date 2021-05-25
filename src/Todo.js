@@ -6,8 +6,10 @@ export default function Todo() {
   const [todo, setTodo] = useState([]);
 
   useEffect(() => {
-    let result = JSON.parse(localStorage.getItem("array"));
-  }, [todo]);
+    let result = localStorage.getItem("array");
+    let array = JSON.parse(result);
+    setTodo(array);
+  }, []);
 
   const addText = () => {
     let array1 = todo; // this declaration refers  the memory
