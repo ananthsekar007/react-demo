@@ -20,6 +20,20 @@ export default function Todo() {
         console.log(array);
     }
 
+    const deleteElement = (index) => {
+        let array = [...todo];
+        array.splice(index, 1);
+        setTodo(array);
+    }
+
+    const editElement = (index) => {
+        let array = [...todo];
+        let value = prompt("Enter the replacement value");
+        array.splice(index, 1, value);
+        setTodo(array);
+        console.log(array);
+    }
+
     return(
         <div>
             <div>
@@ -27,6 +41,12 @@ export default function Todo() {
                     return(
                         <div>
                             <h3>{index+1}.{item}</h3>
+                            <button onClick={() => {
+                                deleteElement(index);
+                            }} >Delete me</button>
+                            <button onClick={() => {
+                                editElement(index);
+                            }} >Edit me</button>
                         </div>
                     )
                 })}
