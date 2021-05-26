@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App1 from './App';
 import Todo from "./Todo";
+import Fetch from "./Fetch";
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Todo />
+    <Fetch />
   </React.StrictMode>,
   document.getElementById('root')
 );
